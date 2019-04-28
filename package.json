@@ -1,0 +1,39 @@
+{
+    "name": "atom-ide-hover-linter",
+    "main": "./lib/main",
+    "version": "0.0.0",
+    "description": "none",
+    "scripts": {
+        "build": "tsc --pretty --project ./",
+        "dev": "tsc --watch --pretty --project ./",
+        "lint": "tslint --project ./",
+        "prepublishOnly": "npm run build",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tonn/atom-ide-hover-linter"
+    },
+    "homepage": "https://atom.io/packages/atom-ide-hover-linter",
+    "bugs": {
+        "url": "https://github.com/tonn/atom-ide-hover-linter/issues"
+    },
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/atom": "^1.36.1",
+        "@types/node": "^11.13.8",
+        "husky": "^2.1.0",
+        "tslint": "^5.16.0",
+        "typescript": "^3.4.5"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
+    }
+}
