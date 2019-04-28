@@ -23,7 +23,9 @@
     "engines": {
         "atom": ">=1.0.0 <2.0.0"
     },
-    "dependencies": {},
+    "dependencies": {
+        "etch": "^0.14.0"
+    },
     "devDependencies": {
         "@types/atom": "^1.36.1",
         "@types/node": "^11.13.8",
@@ -37,17 +39,17 @@
         }
     },
     "consumedServices": {
-      "HoverProvidersRegistry": {
-        "versions": {
-          "1.0.0": "ConsumeHoverProvidersRegistry"
+        "HoverProvidersRegistry": {
+            "versions": {
+                "1.0.0": "ConsumeHoverProvidersRegistry"
+            }
         }
-      }
     },
     "providedServices": {
-      "linter-ui": {
-        "versions": {
-          "1.0.0": "ProviderLinterUI"
+        "linter-ui": {
+            "versions": {
+                "1.0.0": "ProviderLinterUI"
+            }
         }
-      }
     }
 }

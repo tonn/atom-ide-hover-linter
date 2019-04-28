@@ -1,0 +1,34 @@
+@import "ui-variables";
+@import "syntax-variables";
+@import "_helpers";
+
+@spacing: 12px;
+
+.LinterMessageView {
+  background: @syntax-background-color;
+  color: @syntax-text-color;
+  font-size: 1rem; // some themes set font sizes on the root node
+  font-family: @font-family;
+  position: relative;
+
+  &__Severity {
+    display: inline-block;
+  }
+
+  &__LinterName {
+    color: @text-color-subtle;
+  }
+
+  &_Error &__Severity {
+    .size(@spacing / 2);
+    background: @background-color-error;
+  }
+
+  &_Warning &__Severity {
+    background: @background-color-warning;
+  }
+
+  &_Info &__Severity {
+    background: @background-color-info;
+  }
+}
