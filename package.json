@@ -35,5 +35,19 @@
         "hooks": {
             "pre-commit": "npm run lint"
         }
+    },
+    "consumedServices": {
+      "HoverProvidersRegistry": {
+        "versions": {
+          "1.0.0": "ConsumeHoverProvidersRegistry"
+        }
+      }
+    },
+    "providedServices": {
+      "linter-ui": {
+        "versions": {
+          "1.0.0": "ProviderLinterUI"
+        }
+      }
     }
 }

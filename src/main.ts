@@ -1,24 +1,28 @@
 import { CompositeDisposable } from 'atom';
+import { HoverProvidersRegistry } from './atom-ide-hover';
+import { UI } from './linter';
 
-module.exports = {
-  config: {},
-  subscriptions: null,
+import { LinterHoverProviderInstance } from './LinterHoverProvider';
+
+class Main {
+  private _subscriptions = new CompositeDisposable();
 
   activate(): void {
-    // Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
-    this.subscriptions = new CompositeDisposable;
-
-    // Register command that displays Hello World
-    this.subscriptions.add(atom.commands.add('atom-workspace', {
-      'atom-ide-hover-linter:hello-world': () => this.helloWorld()
-    }));
-  },
+  }
 
   deactivate(): void {
-    this.subscriptions.dispose();
-  },
-
-  helloWorld(): void {
-    atom.notifications.addInfo('Hello World');
+    this._subscriptions.dispose();
   }
-};
+
+  ConsumeHoverProvidersRegistry(hoverProvidersRegistry: HoverProvidersRegistry) {
+    console.log('ConsumeHoverProvidersRegistry');
+
+    hoverProvidersRegistry.AddProvider(LinterHoverProviderInstance);
+  }
+
+  ProviderLinterUI(): UI {
+    return LinterHoverProviderInstance;
+  }
+}
+
+module.exports = new Main();
