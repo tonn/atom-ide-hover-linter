@@ -13,6 +13,7 @@
 
   &__Severity {
     display: inline-block;
+    .size(@spacing / 2);
   }
 
   &__LinterName {
@@ -20,7 +21,7 @@
   }
 
   &_Error &__Severity {
-    .size(@spacing / 2);
+
     background: @background-color-error;
   }
 
